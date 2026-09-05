@@ -37,7 +37,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Video data — add a new object here any time you have a
 // new Google Drive link. driveId is the long ID from the
 // share URL: drive.google.com/file/d/THIS_PART/view
-// group is one of: "educational", "promotional", "broll"
+// group is one of: "educational", "promotional"
 // =========================================================
 const VIDEOS = [
   { driveId: '1rN57JP5mVA3a79FZfacTSD-c3VH3wvce', title: 'Goal Seek in Excel',
@@ -55,14 +55,13 @@ const VIDEOS = [
 
   { driveId: '1NktgpeUMzVOvnbsWGEVmGeZQ-xk5Uq_T', title: 'Maklife — Combo Promo',
     desc: 'A product combo promo edited for Maklife.', group: 'promotional' },
-
-  { driveId: '10V_yafubdyxSIcCIl0xGjx2QWsAdMMey', title: 'Wireless New', group: 'broll' },
-  { driveId: '1uj67rGzpC0pwvwu2oz4UGIeol4Zwn30U', title: 'IMG_6945', group: 'broll' },
-  { driveId: '18W5NGKEVkllqsndO6Njyg00K0uradpCf', title: 'IMG_7003', group: 'broll' },
-  { driveId: '1C0g541O4EwHNWo9QSKrKgrDABg-VRkFC', title: 'IMG_7023', group: 'broll' },
-  { driveId: '1W0Sem4CgtQMQHvpq3cE5nYpJTmTDg7F6', title: 'IMG_7123', group: 'broll' },
-  { driveId: '1c0KU6RE7tmRaNfNBOYf8dCb_ZHPTpZHU', title: 'IMG_7258', group: 'broll' },
-  { driveId: '1ctEgP93p237lJj_cKgoRgTnY9OlgctHM', title: 'IMG_7830', group: 'broll' },
+  { driveId: '10V_yafubdyxSIcCIl0xGjx2QWsAdMMey', title: 'Wireless New', group: 'promotional' },
+  { driveId: '1uj67rGzpC0pwvwu2oz4UGIeol4Zwn30U', title: 'IMG_6945', group: 'promotional' },
+  { driveId: '18W5NGKEVkllqsndO6Njyg00K0uradpCf', title: 'IMG_7003', group: 'promotional' },
+  { driveId: '1C0g541O4EwHNWo9QSKrKgrDABg-VRkFC', title: 'IMG_7023', group: 'promotional' },
+  { driveId: '1W0Sem4CgtQMQHvpq3cE5nYpJTmTDg7F6', title: 'IMG_7123', group: 'promotional' },
+  { driveId: '1c0KU6RE7tmRaNfNBOYf8dCb_ZHPTpZHU', title: 'IMG_7258', group: 'promotional' },
+  { driveId: '1ctEgP93p237lJj_cKgoRgTnY9OlgctHM', title: 'IMG_7830', group: 'promotional' },
 ];
 
 const THUMB = id => `https://drive.google.com/thumbnail?id=${id}&sz=w640`;
@@ -105,38 +104,12 @@ function buildReelCard(video){
   return article;
 }
 
-function buildBrollCard(video){
-  const article = document.createElement('article');
-  article.className = 'broll';
-
-  const frame = document.createElement('button');
-  frame.type = 'button';
-  frame.className = 'broll__frame';
-  frame.setAttribute('aria-label', `Play raw clip ${video.title}`);
-  frame.innerHTML = `
-    <img class="broll__thumb" src="${THUMB(video.driveId)}" alt="" loading="lazy" />
-    <span class="broll__badge">Raw</span>
-    <span class="broll__play">${PLAY_ICON}</span>
-  `;
-  frame.addEventListener('click', () => openVideo(video.driveId, video.title));
-
-  const caption = document.createElement('p');
-  caption.className = 'broll__caption';
-  caption.textContent = video.title;
-
-  article.appendChild(frame);
-  article.appendChild(caption);
-  return article;
-}
-
 const gridEducational = document.getElementById('gridEducational');
 const gridPromotional = document.getElementById('gridPromotional');
-const gridBroll = document.getElementById('gridBroll');
 
 VIDEOS.forEach(video => {
   if (video.group === 'educational') gridEducational.appendChild(buildReelCard(video));
   else if (video.group === 'promotional') gridPromotional.appendChild(buildReelCard(video));
-  else if (video.group === 'broll') gridBroll.appendChild(buildBrollCard(video));
 });
 
 // =========================================================
