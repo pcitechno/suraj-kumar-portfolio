@@ -1,106 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Suraj Kumar | Video Editor</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suraj Kumar — Video Editor</title>
+<meta name="description" content="Suraj Kumar, video editor. Reels, shorts, promotional cuts and long-form YouTube editing." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="nav">
-  <a class="logo" href="#home">SURAJ<span>.</span></a>
-  <nav>
+<!-- Scrub bar: fills as the page is scrolled, like a playhead moving across a timeline -->
+<div class="scrub" aria-hidden="true">
+  <div class="scrub__fill" id="scrubFill"></div>
+</div>
+
+<header class="nav" id="siteNav">
+  <a href="#top" class="nav__mark" aria-label="Suraj Kumar — home">
+    <span class="nav__bracket nav__bracket--tl"></span>
+    <span class="nav__bracket nav__bracket--br"></span>
+    SK
+  </a>
+
+  <nav class="nav__links" id="navLinks">
     <a href="#work">Work</a>
-    <a href="#skills">Skills</a>
+    <a href="#toolkit">Toolkit</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a class="nav-btn" href="#contact">Let's Work</a>
+
+  <div class="nav__actions">
+    <!-- TODO: replace # with your resume link (Google Drive "Anyone with the link" share URL, or a PDF in this repo) -->
+    <a href="#" class="btn btn--ghost nav__cv">Download CV</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-left">
-    <div class="eyebrow">VIDEO EDITOR • REELS • YOUTUBE • BUSINESS CONTENT</div>
-    <h1>I turn raw footage into <span>engaging stories.</span></h1>
-    <p>Creative Video Editor focused on short-form and long-form content, with hands-on editing in captions, pacing, transitions, music, sound effects and visual storytelling.</p>
-    <div class="buttons">
-      <a class="btn-main" href="#work">View My Work <b>↗</b></a>
-      <a class="btn-outline" href="Suraj%20Kr%20CV.pdf" target="_blank">Download CV</a>
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <p class="tc">00:00:00:00</p>
+    <h1 class="hero__title">Suraj Kumar</h1>
+    <p class="hero__role">Video Editor — Reels, Shorts &amp; Long&#8209;Form Content</p>
+    <p class="hero__pitch">
+      I cut footage into things people actually watch to the end: Excel and finance
+      explainers that teach without dragging, promos that open strong, and reels built
+      for short attention spans.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#work" class="btn btn--primary">
+        <svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
+        Watch the reel
+      </a>
+      <!-- TODO: replace # with your resume link -->
+      <a href="#" class="btn btn--ghost">Download CV</a>
     </div>
-    <div class="software">
-      <i>Adobe Premiere Pro</i><i>CapCut</i><i>Filmora</i><i>Camtasia</i>
+
+    <p class="hero__meta">Gurugram, NCR · Open to freelance &amp; full-time roles</p>
+
+    <!-- decorative waveform, plays once on load -->
+    <svg class="hero__wave" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="0,30 20,30 30,10 40,50 50,20 60,40 70,30 90,30 100,15 110,45 120,30 140,30 150,8 160,52 170,30 190,30 200,22 210,38 220,30 240,30 250,12 260,48 270,30 290,30 300,30 310,18 320,42 330,30 350,30 360,10 370,50 380,30 400,30 410,25 420,35 430,30 450,30 460,14 470,46 480,30 500,30 510,20 520,40 530,30 550,30 560,28 570,32 580,30 600,30" />
+    </svg>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section class="section" id="work">
+    <div class="section__head">
+      <h2>Selected work</h2>
+      <p class="section__sub">Explainer edits, one promo cut, and the raw footage behind them. Click a frame to play it right here.</p>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="circle"></div><div class="play">▶</div>
-    <div class="availability"><div><small>AVAILABLE FOR</small><strong>Video Editing Projects</strong></div><label>● Available</label></div>
-  </div>
-</section>
 
-<section class="section" id="work">
-  <div class="section-title">
-    <div><div class="eyebrow">SELECTED WORK</div><h2>My best editing samples.</h2></div>
-    <p>Real editing work. Click a sample to watch it on Google Drive.</p>
-  </div>
-
-  <div class="projects">
-    <article class="project project-large">
-      <div class="project-thumb one"><small>01</small><strong>FULL<br>EDITING</strong><a href="https://drive.google.com/file/d/10V_yafubdyxSIcCIl0xGjx2QWsAdMMey/view?usp=sharing" target="_blank">▶ Watch Sample</a></div>
-      <div class="project-text"><h3>Full Editing</h3><p>Complete edit • cuts • pacing • captions • music • effects</p></div>
-    </article>
-    <article class="project">
-      <div class="project-thumb two"><small>02</small><strong>TEXT<br>OVER VOICE</strong><a href="https://drive.google.com/file/d/1rN57JP5mVA3a79FZfacTSD-c3VH3wvce/view?usp=sharing" target="_blank">▶ Watch Sample</a></div>
-      <div class="project-text"><h3>Text Over Voice</h3><p>Voice-led edit • text treatment • timing • visual flow</p></div>
-    </article>
-    <article class="project">
-      <div class="project-thumb three"><small>03</small><strong>EFFECTIVELY<br>30S</strong><a href="https://drive.google.com/file/d/1E3zohLT5HYZOx8QKuR-MfjiRvsID2U3P/view?usp=sharing" target="_blank">▶ Watch Sample</a></div>
-      <div class="project-text"><h3>Effectively — 30S Video</h3><p>Short-form edit • concise storytelling • fast pacing</p></div>
-    </article>
-    <article class="project">
-      <div class="project-thumb four"><small>04</small><strong>40S<br>EDIT</strong><a href="https://drive.google.com/file/d/1Qvqkz5LkbKxQg3e1gelsg9BRGAgMdWKv/view?usp=sharing" target="_blank">▶ Watch Sample</a></div>
-      <div class="project-text"><h3>40S Editing Sample</h3><p>Short-form editing • transitions • music • visual rhythm</p></div>
-    </article>
-    <article class="project">
-      <div class="project-thumb five"><small>05</small><strong>COMPLETE<br>MAKLIFE</strong><a href="https://drive.google.com/file/d/1NktgpeUMzVOvnbsWGEVmGeZQ-xk5Uq_T/view?usp=sharing" target="_blank">▶ Watch Sample</a></div>
-      <div class="project-text"><h3>Complete MAKLIFE</h3><p>Complete project edit • storytelling • visual presentation</p></div>
-    </article>
-  </div>
-
-  <div class="more">
-    <div class="more-head"><strong>MORE EDITING WORK</strong><span>Additional samples</span></div>
-    <div class="more-links">
-      <a href="https://drive.google.com/file/d/1wUtszV_HOTpkFW3Er9l_yf42OLSm2_9U/view?usp=sharing" target="_blank"><b>PCI Techno PMT</b><span>View sample ↗</span></a>
-      <a href="https://drive.google.com/file/d/1CSuPYwMFY_cMF41RHsBFOGBndx6rhpCN/view?usp=sharing" target="_blank"><b>Additional Edit</b><span>View sample ↗</span></a>
-      <a href="https://drive.google.com/file/d/1RUQHwuL17iO1WO5pHcP5ZIDP-cPhXiUh/view?usp=sharing" target="_blank"><b>PCI Techno Vlookup</b><span>View sample ↗</span></a>
+    <div class="work-group">
+      <div class="work-group__head">
+        <p class="tc">00:45:00:00</p>
+        <h3>Educational edits</h3>
+      </div>
+      <div class="reel-grid" id="gridEducational"><!-- filled by script.js --></div>
     </div>
+
+    <div class="work-group">
+      <div class="work-group__head">
+        <p class="tc">01:10:00:00</p>
+        <h3>Promotional</h3>
+      </div>
+      <div class="reel-grid reel-grid--featured" id="gridPromotional"><!-- filled by script.js --></div>
+    </div>
+
+    <div class="work-group">
+      <div class="work-group__head">
+        <p class="tc">01:20:00:00</p>
+        <h3>Raw footage &amp; B-roll</h3>
+        <p class="work-group__note">Unedited clips — the kind of material these edits get built from.</p>
+      </div>
+      <div class="broll-grid" id="gridBroll"><!-- filled by script.js --></div>
+    </div>
+  </section>
+
+  <!-- ================= TOOLKIT ================= -->
+  <section class="section" id="toolkit">
+    <div class="section__head">
+      <p class="tc">01:30:00:00</p>
+      <h2>Toolkit</h2>
+      <p class="section__sub">What's actually open while I'm cutting.</p>
+    </div>
+
+    <ul class="chips">
+      <li>Adobe Premiere Pro</li>
+      <li>CapCut</li>
+      <li>Filmora</li>
+      <li>Camtasia</li>
+      <li>Adobe Photoshop</li>
+      <li>Canva</li>
+      <li>AI Video Generation</li>
+    </ul>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <div class="section__head">
+      <p class="tc">02:00:00:00</p>
+      <h2>Experience</h2>
+      <p class="section__sub">Time on the timeline, not just on paper.</p>
+    </div>
+
+    <div class="timeline" role="list">
+      <div class="timeline__track" aria-hidden="true"></div>
+
+      <div class="timeline__item timeline__item--short" role="listitem">
+        <span class="timeline__bar"></span>
+        <div class="timeline__info">
+          <p class="tc tc--muted">6 months</p>
+          <h3>Pehchaan Graphics</h3>
+          <!-- TODO: add one line on what you actually did here -->
+          <p>Editing &amp; design work across client projects.</p>
+        </div>
+      </div>
+
+      <div class="timeline__item timeline__item--long" role="listitem">
+        <span class="timeline__bar"></span>
+        <div class="timeline__info">
+          <p class="tc tc--muted">2 years</p>
+          <h3>BIS Computer Centre</h3>
+          <!-- TODO: add one line on what you actually did here -->
+          <p>Ongoing editing, design and computer training work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section section--contact" id="contact">
+    <div class="section__head">
+      <p class="tc">02:45:00:00</p>
+      <h2>Let's work together</h2>
+      <p class="section__sub">Have a project or a role in mind? I reply fast.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-item" href="tel:+919990221981">
+        <span class="contact-item__label">Phone</span>
+        <span class="contact-item__value">+91 99902 21981</span>
+      </a>
+      <a class="contact-item" href="mailto:surajkumar.gurugram@gmail.com">
+        <span class="contact-item__label">Email</span>
+        <span class="contact-item__value">surajkumar.gurugram@gmail.com</span>
+      </a>
+      <div class="contact-item contact-item--static">
+        <span class="contact-item__label">Location</span>
+        <span class="contact-item__value">Gurugram, India</span>
+      </div>
+    </div>
+
+    <!-- TODO: replace # with your resume link -->
+    <a href="#" class="btn btn--primary">Download CV</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="tc">END</p>
+  <p>&copy; 2026 Suraj Kumar. Edited with intent.</p>
+</footer>
+
+<!-- Video player: opens on top of the page when a frame is clicked -->
+<div class="modal" id="videoModal" aria-hidden="true">
+  <div class="modal__backdrop" id="modalBackdrop"></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" id="modalClose" aria-label="Close video">&times;</button>
+    <div class="modal__frame">
+      <iframe id="modalIframe" src="" title="Video player" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="modal__title" id="modalTitle"></p>
   </div>
-</section>
+</div>
 
-<section class="section split" id="skills">
-  <div><div class="eyebrow">MY TOOLKIT</div><h2>Skills built for<br>content that performs.</h2></div>
-  <div class="skill-list">
-    <div><b>01</b><strong>Video Editing</strong><span>Adobe Premiere Pro • CapCut • Filmora • Camtasia</span></div>
-    <div><b>02</b><strong>Content Editing</strong><span>Reels • YouTube Shorts • Long-form Videos</span></div>
-    <div><b>03</b><strong>Visual & Audio</strong><span>Captions • Transitions • Music • SFX • Basic VFX</span></div>
-    <div><b>04</b><strong>Creative Tools</strong><span>Adobe Photoshop • Canva • AI-assisted Video Creation</span></div>
-  </div>
-</section>
-
-<section class="section split" id="experience">
-  <div><div class="eyebrow">EXPERIENCE</div><h2>Hands-on, practical<br>work experience.</h2></div>
-  <div class="timeline">
-    <div><small>6 MONTHS</small><h3>Pehchaan Graphics</h3><p>Professional work experience in a graphics/content environment.</p></div>
-    <div><small>2 YEARS</small><h3>BIS Computer Centre</h3><p>Computer Teacher with practical digital-content exposure.</p></div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="eyebrow">GET IN TOUCH</div>
-  <h2>Have a video to edit?<br><span>Let's create something good.</span></h2>
-  <div class="contact-links"><a href="mailto:gurugram.suraj@gmail.com">gurugram.suraj@gmail.com</a><a href="tel:+919990221981">+91 99902 21981</a></div>
-</section>
-
-<footer><b>SURAJ KUMAR</b><span>VIDEO EDITOR</span><span>© 2026</span></footer>
+<script src="script.js"></script>
 </body>
 </html>
